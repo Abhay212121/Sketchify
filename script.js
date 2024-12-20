@@ -16,7 +16,12 @@ const fillContainer = () => {
             rows.append(cols)
             cols.addEventListener('mouseover', () => {
                 if (colorFlag == true) {
-                    cols.style.backgroundColor = getRandomColor();
+                    if (eraserflag == false) {
+                        cols.style.backgroundColor = getRandomColor();
+                    }
+                    else if (eraserflag == true) {
+                        cols.style.backgroundColor = colorBg;
+                    }
                 }
                 else if (colorFlag == false) {
                     cols.style.backgroundColor = colorBg;
@@ -35,26 +40,38 @@ function getRandomColor() {
     return color;
 }
 
-
 let colorFlag = false;
 let colorBg = 'black';
 
 colorBtn.addEventListener('click', () => {
     if (colorFlag == false) {
         colorFlag = true;
-        colorBg = getRandomColor();
         colorBtn.style.backgroundColor = 'rgb(62, 165, 131)';
     }
     else {
         colorFlag = false
-        colorBg = 'black';
         colorBtn.style.backgroundColor = 'aquamarine';
+        console.log(colorBg)
     }
 })
 
+let eraserflag = false
 eraserBtn.addEventListener('click', () => {
-    colorBg = 'white';
-    console.log('eraser was clicked.')
+    if (eraserflag == false) {
+        eraserflag = true;
+        colorBg = 'white'
+        eraserBtn.style.backgroundColor = 'rgb(62, 165, 131)';
+    }
+    else {
+        eraserflag = false;
+        if (colorFlag == true) {
+
+        }
+        else {
+            colorBg = 'black'
+        }
+        eraserBtn.style.backgroundColor = 'aquamarine';
+    }
 })
 
 
