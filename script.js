@@ -20,11 +20,14 @@ const fillContainer = () => {
                         cols.style.backgroundColor = getRandomColor();
                     }
                     else if (eraserflag == true) {
-                        cols.style.backgroundColor = colorBg;
+                        cols.style.backgroundColor = 'white';
                     }
                 }
                 else if (colorFlag == false && eraserflag == false) {
                     cols.style.backgroundColor = 'black';
+                }
+                else if (colorFlag == false && eraserflag == true) {
+                    cols.style.backgroundColor = 'white';
                 }
             })
         }
