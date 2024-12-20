@@ -23,8 +23,8 @@ const fillContainer = () => {
                         cols.style.backgroundColor = colorBg;
                     }
                 }
-                else if (colorFlag == false) {
-                    cols.style.backgroundColor = colorBg;
+                else if (colorFlag == false && eraserflag == false) {
+                    cols.style.backgroundColor = 'black';
                 }
             })
         }
