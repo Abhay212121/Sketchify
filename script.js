@@ -62,17 +62,10 @@ let eraserflag = false
 eraserBtn.addEventListener('click', () => {
     if (eraserflag == false) {
         eraserflag = true;
-        colorBg = 'white'
         eraserBtn.style.backgroundColor = 'rgb(62, 165, 131)';
     }
     else {
         eraserflag = false;
-        if (colorFlag == true) {
-
-        }
-        else {
-            colorBg = 'black'
-        }
         eraserBtn.style.backgroundColor = 'aquamarine';
     }
 })
